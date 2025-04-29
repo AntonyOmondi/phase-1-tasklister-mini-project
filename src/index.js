@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
   const form = document.querySelector("form")
-  form.addEventListener("submit", (e) => {
-    e.preventDefault()
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
 
-    handleToDo(e.target.new_task_description.value)
-  })
-});
+      handleToDo(e.target["new-task-description"].value)
+      e.target["new-task-description"].value = ""
+    })}
+  });
 
 
 function handleToDo(todo){
